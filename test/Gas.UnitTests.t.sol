@@ -99,8 +99,8 @@ function get_random_address(uint256 offset) internal returns (address) {
         vm.prank(_sender);
         gas.whiteTransfer(_recipient, _amount);
         (bool a, uint256 b) = gas.getPaymentStatus(address(_sender));
-       // console.log(a);
         assertEq(a, true);
+        console.log(b);
         assertEq(b, _amount);
     }
 
